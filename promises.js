@@ -8,3 +8,20 @@ function mockAsyncSlowAdder(number1, number2) {
     }, 2000);
   });
 }
+
+mockAsyncSlowAdder(1, 2)
+  .then(result => {
+    return mockAsyncSlowAdder(result, 2);
+  })
+  .then(result2 => {
+    return mockAsyncSlowAdder(result2, 2);
+  })
+  .then(result3 => {
+    return mockAsyncSlowAdder(result3, 2);
+  })
+  .then(finalResult => {
+    return mockAsyncSlowAdder(finalResult, 2);
+  })
+  .catch(err => {
+    console.log("error");
+  });
