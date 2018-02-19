@@ -21,6 +21,8 @@ const addEm = async () => {
   }
 };
 
+Promise.all([addEm(), addEm(), addEm()]);
+
 addEm().then(result => {
   console.log("Awaited! Done!", result);
 });
